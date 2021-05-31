@@ -439,6 +439,10 @@ var SwipeableListItem = /*#__PURE__*/function (_PureComponent) {
             _this.leadingActionsElement.removeEventListener('animationend', keepAnimationEnd);
 
             _this.leadingActionsElement.style.width = 0;
+
+            _this.setState({
+              isTranslate: false
+            });
           };
 
           _this.leadingActionsElement.addEventListener('animationend', keepAnimationEnd);
@@ -496,6 +500,10 @@ var SwipeableListItem = /*#__PURE__*/function (_PureComponent) {
         var keepAnimationEnd = function keepAnimationEnd() {
           listElement.removeEventListener('animationend', keepAnimationEnd);
           listElement.style.transform = "translateX(0)";
+
+          _this.setState({
+            isTranslate: false
+          });
         };
 
         listElement.addEventListener('animationend', keepAnimationEnd);

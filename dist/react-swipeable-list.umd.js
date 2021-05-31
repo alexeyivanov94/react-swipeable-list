@@ -438,6 +438,10 @@
               _this.leadingActionsElement.removeEventListener('animationend', keepAnimationEnd);
 
               _this.leadingActionsElement.style.width = 0;
+
+              _this.setState({
+                isTranslate: false
+              });
             };
 
             _this.leadingActionsElement.addEventListener('animationend', keepAnimationEnd);
@@ -495,6 +499,10 @@
           var keepAnimationEnd = function keepAnimationEnd() {
             listElement.removeEventListener('animationend', keepAnimationEnd);
             listElement.style.transform = "translateX(0)";
+
+            _this.setState({
+              isTranslate: false
+            });
           };
 
           listElement.addEventListener('animationend', keepAnimationEnd);

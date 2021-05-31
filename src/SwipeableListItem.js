@@ -286,6 +286,9 @@ class SwipeableListItem extends PureComponent {
             keepAnimationEnd
           );
           this.leadingActionsElement.style.width = 0;
+          this.setState({
+            isTranslate: false,
+          });
         };
 
         this.leadingActionsElement.addEventListener(
@@ -362,6 +365,9 @@ class SwipeableListItem extends PureComponent {
       const keepAnimationEnd = () => {
         listElement.removeEventListener('animationend', keepAnimationEnd);
         listElement.style.transform = `translateX(0)`;
+        this.setState({
+          isTranslate: false,
+        });
       };
 
       listElement.addEventListener('animationend', keepAnimationEnd);
