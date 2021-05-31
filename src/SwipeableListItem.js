@@ -336,6 +336,9 @@ class SwipeableListItem extends PureComponent {
             keepAnimationEnd
           );
           this.trailingActionsElement.style.width = 0;
+          this.setState({
+            isTranslate: false,
+          });
         };
 
         this.trailingActionsElement.addEventListener(
@@ -691,7 +694,7 @@ class SwipeableListItem extends PureComponent {
       console.log(this.left);
 
       this.setState({
-        isTranslate: this.left > 0,
+        isTranslate: this.left !== 0,
       });
 
       if (this.props.onSwipeProgress) {

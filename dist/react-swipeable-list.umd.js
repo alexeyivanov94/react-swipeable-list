@@ -466,6 +466,10 @@
               _this.trailingActionsElement.removeEventListener('animationend', keepAnimationEnd);
 
               _this.trailingActionsElement.style.width = 0;
+
+              _this.setState({
+                isTranslate: false
+              });
             };
 
             _this.trailingActionsElement.addEventListener('animationend', keepAnimationEnd);
@@ -796,7 +800,7 @@
           console.log(_this.left);
 
           _this.setState({
-            isTranslate: _this.left > 0
+            isTranslate: _this.left !== 0
           });
 
           if (_this.props.onSwipeProgress) {
