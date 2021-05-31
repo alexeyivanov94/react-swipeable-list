@@ -976,9 +976,10 @@
             className = _this$props4.className,
             leadingActions = _this$props4.leadingActions,
             trailingActions = _this$props4.trailingActions;
+        var isTranslate = this.state.isTranslate;
         return /*#__PURE__*/React__default['default'].createElement("div", {
           className: clsx('swipeable-list-item', className, {
-            'swipeable-list-item--translate': this.isTranslate
+            'swipeable-list-item--translate': isTranslate
           }),
           ref: this.bindWrapperElement
         }, leadingActions && this.renderActions(leadingActions, 'leading', this.bindLeadingActionsElement), /*#__PURE__*/React__default['default'].createElement("div", {

@@ -774,11 +774,12 @@ class SwipeableListItem extends PureComponent {
 
   render() {
     const { children, className, leadingActions, trailingActions } = this.props;
+    const { isTranslate } = this.state;
 
     return (
       <div
         className={clsx('swipeable-list-item', className, {
-          'swipeable-list-item--translate': this.isTranslate,
+          'swipeable-list-item--translate': isTranslate,
         })}
         ref={this.bindWrapperElement}
       >
