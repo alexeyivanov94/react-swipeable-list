@@ -44,6 +44,7 @@ const initialState = {
   triggerAction: false,
   scaleLeading: false,
   scaleTrailing: false,
+  isTranslate: false,
 };
 
 class SwipeableListItem extends PureComponent {
@@ -686,6 +687,9 @@ class SwipeableListItem extends PureComponent {
       }
 
       this.listElement.style.transform = `translateX(${this.left}px)`;
+      this.setState({
+        isTranslate: this.left > 0,
+      });
 
       if (this.props.onSwipeProgress) {
         const listElementWidth = this.listElement.offsetWidth;
@@ -773,7 +777,9 @@ class SwipeableListItem extends PureComponent {
 
     return (
       <div
-        className={clsx('swipeable-list-item', className)}
+        className={clsx('swipeable-list-item', className, {
+          'swipeable-list-item--translate': this.isTranslate,
+        })}
         ref={this.bindWrapperElement}
       >
         {leadingActions &&
