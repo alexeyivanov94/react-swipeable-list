@@ -89,6 +89,9 @@ class SwipeableListItem extends PureComponent {
     this.previousSwipeDistancePercent = 0;
     this.leadingActionsOpened = false;
     this.trailingActionsOpened = false;
+    this.setState({
+      isTranslate: false,
+    });
   };
 
   get dragHorizontalDirectionThreshold() {

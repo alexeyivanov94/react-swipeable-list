@@ -296,6 +296,10 @@ var SwipeableListItem = /*#__PURE__*/function (_PureComponent) {
       _this.previousSwipeDistancePercent = 0;
       _this.leadingActionsOpened = false;
       _this.trailingActionsOpened = false;
+
+      _this.setState({
+        isTranslate: false
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleDragStartMouse", function (event) {
