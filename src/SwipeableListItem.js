@@ -700,8 +700,6 @@ class SwipeableListItem extends PureComponent {
 
       this.listElement.style.transform = `translateX(${this.left}px)`;
 
-      console.log(this.left);
-
       this.setState({
         isTranslate: this.left !== 0,
       });

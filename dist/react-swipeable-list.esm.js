@@ -801,7 +801,6 @@ var SwipeableListItem = /*#__PURE__*/function (_PureComponent) {
         }
 
         _this.listElement.style.transform = "translateX(".concat(_this.left, "px)");
-        console.log(_this.left);
 
         _this.setState({
           isTranslate: _this.left !== 0
