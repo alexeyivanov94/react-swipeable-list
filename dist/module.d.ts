@@ -19,6 +19,7 @@ export enum Type {
 }
 
 interface SwipeActionProps {
+  className?: string,
   children: ReactNode,
   /**
    * default: `false`
