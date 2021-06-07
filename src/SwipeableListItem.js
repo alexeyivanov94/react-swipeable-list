@@ -70,8 +70,6 @@ class SwipeableListItem extends PureComponent {
 
     this.leadingFullSwipeAction = null;
     this.trailingFullSwipeAction = null;
-
-    this.resetState();
   }
 
   setLeadingFullSwipeAction = action => {
@@ -113,6 +111,8 @@ class SwipeableListItem extends PureComponent {
   }
 
   componentDidMount() {
+    this.resetState();
+
     this.listElement.addEventListener('mousedown', this.handleDragStartMouse);
 
     this.listElement.addEventListener('touchstart', this.handleDragStartTouch);

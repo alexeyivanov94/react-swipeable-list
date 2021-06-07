@@ -906,9 +906,6 @@
       _this.previousSwipeDistancePercent = 0;
       _this.leadingFullSwipeAction = null;
       _this.trailingFullSwipeAction = null;
-
-      _this.resetState();
-
       return _this;
     }
 
@@ -938,6 +935,7 @@
     }, {
       key: "componentDidMount",
       value: function componentDidMount() {
+        this.resetState();
         this.listElement.addEventListener('mousedown', this.handleDragStartMouse);
         this.listElement.addEventListener('touchstart', this.handleDragStartTouch);
         this.listElement.addEventListener('touchend', this.handleDragEndTouch);
